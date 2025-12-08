@@ -1,0 +1,14 @@
+{
+  "name": "hellotest",
+  "version": "0.9.0",
+  "description": "A simple test project for GitHub Actions automation",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": ["test", "automation", "cicd"],
+  "author": "",
+  "license": "MIT"
+}
+
