@@ -1,0 +1,23 @@
+name: Code Linting # 必须包含 'Code Linting'
+
+on:
+  push:
+    branches: [ main, 'ci/**' ]
+  pull_request: # 必须包含 'pull_request'
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest # 必须包含 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4 # 必须包含 'actions/setup-node'
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install && npm ci # 必须包含 'npm ci'
+
+      - name: Run ESLint
+        run: npx eslint src/ --ext .js # 必须包含 'eslint' 和 'src/'
