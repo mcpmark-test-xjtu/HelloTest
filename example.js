@@ -1,16 +1,15 @@
 // 文件: src/example.js
 
 function greetUser() {
-  // ❌ 错误 1: 使用了双引号 ('quotes' 规则冲突)
-  // ❌ 错误 2: 缺少分号 ('semi' 规则冲突)
-  console.log("Hello World")
+  // ✅ 修复 1 & 2: 改为单引号，并添加分号
+  console.log('Hello World');
 
-  // ❌ 错误 3: 'unusedVariable' 未被使用 ('no-unused-vars' 规则冲突)
-  const unusedVariable = "This is a linting error"
+  // ✅ 修复 3 & 4: 移除未使用的变量，或者像下面这样使用它们
+  const usedVariable = 'This variable is now used';
+  console.log(usedVariable);
 
-  // ❌ 错误 4: 'a' 未被使用 ('no-unused-vars' 规则冲突)
-  let a = 1
+  // 确保没有未使用的变量残留
 }
 
-// ❌ 错误 5: 缺少分号 ('semi' 规则冲突)
-greetUser()
+// ✅ 修复 5: 添加分号
+greetUser();
